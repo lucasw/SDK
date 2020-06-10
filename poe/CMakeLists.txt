@@ -1,9 +1,4 @@
-if (CMAKE_VERSION VERSION_LESS "3.0")
-    project(rspoe)
-	set(PROJECT_VERSION 3.0.0)
-else()
-    project(rspoe VERSION 3.0.0 DESCRIPTION "Rugged Science PoE Library")
-endif()
+project(rspoe VERSION 3.0.0)  # DESCRIPTION "Rugged Science PoE Library")
 
 include(GNUInstallDirs)
 include(GenerateExportHeader)
@@ -21,7 +16,7 @@ set(CMAKE_DEBUG_POSTFIX "d")
 add_library(rspoe ${poesrc})
 
 set_target_properties(rspoe PROPERTIES COMPILE_DEFINITIONS "RSPOE_VERSION_STRING=\"${PROJECT_VERSION}\"")
-set_target_properties(rspoe PROPERTIES  VERSION ${PROJECT_VERSION})
+# set_target_properties(rspoe PROPERTIES  VERSION ${PROJECT_VERSION})
 
 target_include_directories(rspoe PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
 
